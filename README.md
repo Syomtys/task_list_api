@@ -15,6 +15,24 @@ Endpoint: `you.domain/api/task/create_task/`
 - **task_for** (optional, string): Task assignee
 - **date_create** (auto, date): Task creation date
 
+###PHP
+$headers = [
+	'Authorization: access_token'
+];
+
+$data = [
+	'create' => [
+		'title' => 'd',
+		'task' => 'task',
+		'priority' => '1',
+		'status' => '1',
+		'task_from' => '1',
+		'task_for' => '',
+		'date_create' => '1',
+	]
+];
+
+
 ---
 
 ## Get Task List
