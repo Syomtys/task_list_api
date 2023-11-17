@@ -1,11 +1,9 @@
 ## Create Task
 
-## Create Task
-
-Endpoint: `http://test.host1864842.hostland.pro/test_ytip/api/task/create_task/`
+Endpoint: `you.domain/api/task/create_task/`
 
 **Headers:**
-Authorization: [access_token]
+{Authorization: access_token}
 
 
 **Parameters:**
@@ -21,10 +19,10 @@ Authorization: [access_token]
 
 ## Get Task List
 
-Endpoint: `http://test.host1864842.hostland.pro/test_ytip/api/task/get_task_list/`
+Endpoint: `you.domain/api/task/get_task_list/`
 
 **Headers:**
-Authorization: [access_token]
+{Authorization: access_token}
 
 
 **Parameters:**
@@ -42,10 +40,10 @@ Authorization: [access_token]
 
 ## Delete Task
 
-Endpoint: `http://test.host1864842.hostland.pro/test_ytip/api/task/delete_task/`
+Endpoint: `you.domain/api/task/delete_task/`
 
 **Headers:**
-Authorization: [access_token]
+{Authorization: access_token}
 
 
 **Parameters:**
@@ -62,10 +60,10 @@ Authorization: [access_token]
 
 ## Edit Task
 
-Endpoint: `http://test.host1864842.hostland.pro/test_ytip/api/task/edit_task/`
+Endpoint: `you.domain/api/task/edit_task/`
 
 **Headers:**
-Authorization: [access_token]
+{Authorization: access_token}
 
 
 **Parameters:**
