@@ -1,3 +1,5 @@
+after installation run `admin/?start_setting=start_create`
+
 ## Create Task
 
 **Headers:**
