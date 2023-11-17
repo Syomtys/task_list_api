@@ -1,25 +1,28 @@
 ## Create Task
 
-Endpoint: `you.domain/api/task/create_task/`
-
 **Headers:**
-{Authorization: access_token}
+POST `/api/task/create_task/`
 
+### Parameters:
+**headers**
+`{Authorization: access_token}`
+**body**
+| Parameters | required | data type | description |
+| ------ | ------ | ------ | ------ |
+| title | yes | string | Task title |
+| task | yes | string | Task description |
+| priority | no | int | Task priority (default: 1) |
+| status | no | int | Task status (default: 1) |
+| task_from | auto | string | Task assigner |
+| task_for | no | string | Task assignee |
+| date_create | auto | date | Task creation date |
 
-**Parameters:**
-- **title** (required, string): Task title
-- **task** (required, string): Task description
-- **priority** (optional, int): Task priority (default: 1)
-- **status** (optional, int): Task status (default: 1)
-- **task_from** (auto, string): Task assigner
-- **task_for** (optional, string): Task assignee
-- **date_create** (auto, date): Task creation date
+### PHP
 
-###PHP
+```sh
 $headers = [
-	'Authorization: access_token'
+'Authorization: access_token'
 ];
-
 $data = [
 	'create' => [
 		'title' => 'd',
@@ -31,73 +34,157 @@ $data = [
 		'date_create' => '1',
 	]
 ];
-
+```
 
 ---
 
 ## Get Task List
 
-Endpoint: `you.domain/api/task/get_task_list/`
-
 **Headers:**
-{Authorization: access_token}
+POST `/api/task/get_task_list/`
 
+### Parameters:
+**headers**
+`{Authorization: access_token}`
+**body**
+| Parameters | required | data type | description |
+| ------ | ------ | ------ | ------ |
+| id | optional | int | Element ID |
+| limit | optional | int | Limit |
+| title | yes | string | Task title |
+| task | yes | string | Task description |
+| priority | no | int | Task priority |
+| status | no | int | Task status |
+| task_from | auto | string | Task assigner |
+| task_for | no | string | Task assignee |
+| date_create | auto | date | Task creation date |
 
-**Parameters:**
-- **id** (optional, int): Element ID
-- **limit** (optional, int): Limit
-- **title** (optional, string): Title
-- **task** (optional, string): Task description
-- **priority** (optional, int): Task priority
-- **task_for** (optional, string): Task assignee
-- **task_from** (optional, string): Task assigner
-- **date_create** (optional, date): Date in Y-m-d format
-- **status** (optional, int): Task status
+### PHP
+
+```sh
+$headers = [
+'Authorization: access_token'
+];
+$data = [
+	'get' => [
+		'id' => 3,
+		'limit' => 5,
+		'title' => 'title',
+		'task' => 'task',
+		'priority' => 1,
+		'task_for' => '10',
+		'task_from' => 'ee',
+		'date_create' => '2023-11-16',//Y-m-d format
+	]
+];
+```
 
 ---
 
-## Delete Task
-
-Endpoint: `you.domain/api/task/delete_task/`
+## Deleted Task
 
 **Headers:**
-{Authorization: access_token}
+POST `/api/task/delete_task/`
 
+### Parameters:
+**headers**
+`{Authorization: access_token}`
+**body**
+| Parameters | required | data type | description |
+| ------ | ------ | ------ | ------ |
+| id | optional | int | Element ID |
+| limit | optional | int | Limit |
+| title | yes | string | Task title |
+| task | yes | string | Task description |
+| priority | no | int | Task priority |
+| status | no | int | Task status |
+| task_from | auto | string | Task assigner |
+| task_for | no | string | Task assignee |
+| date_create | auto | date | Task creation date |
 
-**Parameters:**
-- **id** (optional, int): Element ID
-- **limit** (optional, int): Limit
-- **title** (optional, string): Title
-- **task** (optional, string): Task description
-- **priority** (optional, int): Task priority
-- **status** (optional, int): Task status
-- **task_for** (optional, string): Task assignee
-- **task_from** (optional, string): Task assigner
+### PHP
+
+```sh
+$headers = [
+'Authorization: access_token'
+];
+$data = [
+	'dlt' => [
+		'id' => 9,
+		'limit' => 5,
+		'title' => 'title',
+		'task' => 'task',
+		'priority' => 1,
+		'status' => 1,
+		'task_for' => '10',
+		'task_from' => 'ee',
+	]
+];
+```
 
 ---
 
 ## Edit Task
 
-Endpoint: `you.domain/api/task/edit_task/`
-
 **Headers:**
-{Authorization: access_token}
+POST `/api/task/edit_task//`
 
+### Parameters:
+**headers**
+`{Authorization: access_token}`
+**body**
+| Parameters | required | data type | description |
+| ------ | ------ | ------ | ------ |
+| get[id] | optional | int | Element ID |
+| get[limit] | optional | int | Limit |
+| get[title] | yes | string | Task title |
+| get[task] | yes | string | Task description |
+| get[priority] | no | int | Task priority |
+| get[status] | no | int | Task status |
+| get[task_from] | auto | string | Task assigner |
+| get[task_for] | no | string | Task assignee |
+| get[date_create] | auto | date | Task creation date |
 
-**Parameters:**
-- **get[id]** (optional, int): Element ID
-- **get[limit]** (optional, int): Limit
-- **get[title]** (optional, string): Title
-- **get[task]** (optional, string): Task description
-- **get[priority]** (optional, int): Task priority
-- **get[task_for]** (optional, string): Task assignee
-- **get[task_from]** (optional, string): Task assigner
-- **get[date_create]** (optional, date): Date in Y-m-d format
-- **get[status]** (optional, int): Task status
-- **new_data[limit]** (optional, int): Limit
-- **new_data[title]** (optional, string): Title
-- **new_data[task]** (optional, string): Task description
-- **new_data[priority]** (optional, int): Task priority
-- **new_data[task_for]** (optional, string): Task assignee
-- **new_data[task_from]** (optional, string): Task assigner
-- **new_data[status]** (optional, int): Task status
+| Parameters | required | data type | description |
+| ------ | ------ | ------ | ------ |
+| new_data[limit] | optional | int | Limit |
+| new_data[title] | yes | string | Task title |
+| new_data[task] | yes | string | Task description |
+| new_data[priority] | no | int | Task priority |
+| new_data[status] | no | int | Task status |
+| new_data[task_from ]| auto | string | Task assigner |
+| tnew_data[ask_for] | no | string | Task assignee |
+| new_data[date_create] | auto | date | Task creation date |
+
+### PHP
+
+```sh
+$headers = [
+'Authorization: access_token'
+];
+$data = [
+	'get' => [
+		'id' => 11,
+		'limit' => 5,
+		'title' => 'title',
+		'task' => 'task',
+		'priority' => 3,
+		'status' => 1,
+		'task_for' => '10',
+		'task_from' => 'ee',
+		'date_create' => '2023-11-16',//Y-m-d format
+	],
+	'new_data' => [
+		'limit' => 5,
+		'title' => 'title',
+		'task' => 'task',
+		'priority' => 4,
+		'status' => 4,
+		'task_for' => '10',
+		'task_from' => 'ee',
+	]
+];
+
+```
+
+---
